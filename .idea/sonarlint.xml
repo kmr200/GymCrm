@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="moduleMapping">
+      <map>
+        <entry key="api-gateway" value="ApiGateway" />
+        <entry key="eureka-server" value="EurekaServer" />
+        <entry key="gym-crm" value="GymCrm" />
+        <entry key="trainer-workload-service" value="TrainerWorkloadService" />
+      </map>
+    </option>
+  </component>
+</project>

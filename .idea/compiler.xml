@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.0/d48e787cbd31bfd8766cdcd255ca102e974309/mapstruct-processor-1.6.0.jar" />
+        </processorPath>
+        <module name="GymCrm.test" />
+        <module name="GymCrm.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="17" />
+      <module name="ApiGateway" target="17" />
+      <module name="ApiGateway.main" target="17" />
+      <module name="ApiGateway.test" target="17" />
+      <module name="eureka-server" target="17" />
+      <module name="gym-crm" target="17" />
+      <module name="trainer-workload-service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'Main-microservice'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['gym-app:8080']
+
+  - job_name: 'Trainer-workload-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['trainer-workload-service:8081']

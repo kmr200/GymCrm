@@ -1,0 +1,159 @@
+services:
+
+  eureka:
+    build:
+      context: ./eureka-server/
+      dockerfile: ./Dockerfile
+    ports:
+      - "8761:8761"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8761/actuator/health || exit 1" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    command: [ "java", "-jar", "app.jar" ]
+    networks:
+      - my-network
+
+  activemq:
+    image: apache/activemq-classic
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    networks:
+      - my-network
+    volumes:
+      - ./docker/activemq/activemq.xml:/opt/apache-activemq/conf/activemq.xml
+      - activemq-data:/data/activemq
+
+  trainer-workload-service:
+    build:
+      context: ./trainer-workload-service/
+      dockerfile: ./Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      eureka:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8081/actuator/health || exit 1" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    command: [ "java", "-jar", "app.jar" ]
+    networks:
+      - my-network
+
+  gym-app:
+    build:
+      context: ./gym-crm/
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      eureka:
+        condition: service_healthy
+      activemq:
+        condition: service_started
+    environment:
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
+      SPRING_PROFILES_ACTIVE: docker
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    command: [ "java", "-jar", "app.jar" ]
+    networks:
+      - my-network
+
+  db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./docker/db/gym_schema.sql:/docker-entrypoint-initdb.d/gym_schema.sql
+      - mysql-data:/var/lib/mysql
+    networks:
+      - "my-network"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "--silent" ]
+      interval: 1s
+      timeout: 15s
+      retries: 15
+
+  mongodb:
+    image: mongodb/mongodb-community-server:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - "my-network"
+    volumes:
+      - mongodb-data:/data/db
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=admin
+      - MONGODB_INITDB_ROOT_PASSWORD=your_secure_password
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - my-network
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 1s
+      timeout: 5s
+      retries: 5
+
+  prometheus:
+    image: prom/prometheus:latest
+    working_dir: /etc/prometheus/
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    networks:
+      - my-network
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin  # Default username for Grafana
+      - GF_SECURITY_ADMIN_PASSWORD=admin  # Default password for Grafana
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./docker/grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - my-network
+
+volumes:
+  grafana-storage:
+  redis-data:
+  mysql-data:
+  activemq-data:
+  mongodb-data:
+
+networks:
+  my-network:
