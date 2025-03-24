@@ -3141,3 +3141,885 @@ java.lang.IllegalStateException: Client instance has been closed.
 2024-12-18 10:33:22.061 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shut down
 2024-12-18 10:33:22.073 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
 2024-12-18 10:33:22.073 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-02-05 22:15:42.379 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Starting EurekaServerApplication using Java 17.0.14 with PID 77717 (/Users/owner/Downloads/EpamJava/eureka-server/build/classes/java/main started by owner in /Users/owner/Downloads/EpamJava)
+2025-02-05 22:15:42.385 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-05 22:15:44.731 [main] INFO  [trace=, span=] o.s.cloud.context.scope.GenericScope - BeanFactory id=da1dc1f6-9533-320f-8baa-ca3f581ae0d4
+2025-02-05 22:15:44.941 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-02-05 22:15:44.948 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-02-05 22:15:45.509 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8761 (http)
+2025-02-05 22:15:45.536 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2025-02-05 22:15:45.539 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-05 22:15:45.539 [main] INFO  [trace=, span=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-05 22:15:45.631 [main] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-05 22:15:45.632 [main] INFO  [trace=, span=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3201 ms
+2025-02-05 22:15:45.847 [main] ERROR [trace=, span=] o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webMvcObservationFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/web/servlet/WebMvcObservationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcObservationFilter' parameter 0: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+2025-02-05 22:15:45.875 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-05 22:15:45.884 [main] WARN  [trace=, span=] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-02-05 22:15:45.916 [main] INFO  [trace=, span=] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-05 22:15:45.951 [main] ERROR [trace=, span=] o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.epam.xstack.gym.eurekaserver.EurekaServerApplication.main(EurekaServerApplication.java:12)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcObservationFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/web/servlet/WebMvcObservationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcObservationFilter' parameter 0: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:202)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 53 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1696)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1470)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.resolveStream(DefaultListableBeanFactory.java:2198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.orderedStream(DefaultListableBeanFactory.java:2192)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.asOrderedList(ObservationRegistryConfigurer.java:101)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.lambda$registerHandlers$0(ObservationRegistryConfigurer.java:78)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2126)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.registerHandlers(ObservationRegistryConfigurer.java:77)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.configure(ObservationRegistryConfigurer.java:71)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryPostProcessor.postProcessAfterInitialization(ObservationRegistryPostProcessor.java:69)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1809)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 88 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 102 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at io.micrometer.prometheusmetrics.PrometheusMeterRegistry.<init>(PrometheusMeterRegistry.java:107)
+	at org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusMetricsExportAutoConfiguration.prometheusMeterRegistry(PrometheusMetricsExportAutoConfiguration.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 103 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.prometheus.metrics.expositionformats.ExpositionFormats
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 110 common frames omitted
+2025-02-05 22:16:04.233 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Starting EurekaServerApplication using Java 17.0.14 with PID 77732 (/Users/owner/Downloads/EpamJava/eureka-server/build/classes/java/main started by owner in /Users/owner/Downloads/EpamJava)
+2025-02-05 22:16:04.238 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-05 22:16:05.621 [main] INFO  [trace=, span=] o.s.cloud.context.scope.GenericScope - BeanFactory id=da1dc1f6-9533-320f-8baa-ca3f581ae0d4
+2025-02-05 22:16:05.751 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-02-05 22:16:05.764 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-02-05 22:16:06.101 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8761 (http)
+2025-02-05 22:16:06.114 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2025-02-05 22:16:06.117 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-05 22:16:06.118 [main] INFO  [trace=, span=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-05 22:16:06.222 [main] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-05 22:16:06.224 [main] INFO  [trace=, span=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1923 ms
+2025-02-05 22:16:06.359 [main] ERROR [trace=, span=] o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webMvcObservationFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/web/servlet/WebMvcObservationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcObservationFilter' parameter 0: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+2025-02-05 22:16:06.517 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-05 22:16:06.526 [main] WARN  [trace=, span=] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-02-05 22:16:06.605 [main] INFO  [trace=, span=] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-05 22:16:06.619 [main] ERROR [trace=, span=] o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.epam.xstack.gym.eurekaserver.EurekaServerApplication.main(EurekaServerApplication.java:12)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcObservationFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/web/servlet/WebMvcObservationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcObservationFilter' parameter 0: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:202)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 53 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1696)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1470)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.resolveStream(DefaultListableBeanFactory.java:2198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.orderedStream(DefaultListableBeanFactory.java:2192)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.asOrderedList(ObservationRegistryConfigurer.java:101)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.lambda$registerHandlers$0(ObservationRegistryConfigurer.java:78)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2126)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.registerHandlers(ObservationRegistryConfigurer.java:77)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.configure(ObservationRegistryConfigurer.java:71)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryPostProcessor.postProcessAfterInitialization(ObservationRegistryPostProcessor.java:69)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1809)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 88 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 102 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at io.micrometer.prometheusmetrics.PrometheusMeterRegistry.<init>(PrometheusMeterRegistry.java:107)
+	at org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusMetricsExportAutoConfiguration.prometheusMeterRegistry(PrometheusMetricsExportAutoConfiguration.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 103 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.prometheus.metrics.expositionformats.ExpositionFormats
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 110 common frames omitted
+2025-02-05 22:18:39.780 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Starting EurekaServerApplication using Java 17.0.14 with PID 78049 (/Users/owner/Downloads/EpamJava/eureka-server/build/classes/java/main started by owner in /Users/owner/Downloads/EpamJava)
+2025-02-05 22:18:39.781 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-05 22:18:40.321 [main] INFO  [trace=, span=] o.s.cloud.context.scope.GenericScope - BeanFactory id=da1dc1f6-9533-320f-8baa-ca3f581ae0d4
+2025-02-05 22:18:40.343 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-02-05 22:18:40.345 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-02-05 22:18:40.446 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8761 (http)
+2025-02-05 22:18:40.452 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2025-02-05 22:18:40.453 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-05 22:18:40.454 [main] INFO  [trace=, span=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-05 22:18:40.485 [main] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-05 22:18:40.486 [main] INFO  [trace=, span=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 687 ms
+2025-02-05 22:18:40.535 [main] ERROR [trace=, span=] o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webMvcObservationFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/web/servlet/WebMvcObservationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcObservationFilter' parameter 0: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+2025-02-05 22:18:40.551 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-05 22:18:40.555 [main] WARN  [trace=, span=] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-02-05 22:18:40.567 [main] INFO  [trace=, span=] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-05 22:18:40.579 [main] ERROR [trace=, span=] o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.epam.xstack.gym.eurekaserver.EurekaServerApplication.main(EurekaServerApplication.java:12)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcObservationFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/web/servlet/WebMvcObservationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcObservationFilter' parameter 0: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:202)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 53 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1696)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1470)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.resolveStream(DefaultListableBeanFactory.java:2198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.orderedStream(DefaultListableBeanFactory.java:2192)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.asOrderedList(ObservationRegistryConfigurer.java:101)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.lambda$registerHandlers$0(ObservationRegistryConfigurer.java:78)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2126)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.registerHandlers(ObservationRegistryConfigurer.java:77)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.configure(ObservationRegistryConfigurer.java:71)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryPostProcessor.postProcessAfterInitialization(ObservationRegistryPostProcessor.java:69)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1809)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 88 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 102 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at io.micrometer.prometheusmetrics.PrometheusMeterRegistry.<init>(PrometheusMeterRegistry.java:107)
+	at org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusMetricsExportAutoConfiguration.prometheusMeterRegistry(PrometheusMetricsExportAutoConfiguration.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 103 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.prometheus.metrics.expositionformats.ExpositionFormats
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 110 common frames omitted
+2025-02-05 22:20:14.349 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Starting EurekaServerApplication using Java 17.0.14 with PID 78157 (/Users/owner/Downloads/EpamJava/eureka-server/build/classes/java/main started by owner in /Users/owner/Downloads/EpamJava)
+2025-02-05 22:20:14.358 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-05 22:20:15.826 [main] INFO  [trace=, span=] o.s.cloud.context.scope.GenericScope - BeanFactory id=da1dc1f6-9533-320f-8baa-ca3f581ae0d4
+2025-02-05 22:20:15.940 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-02-05 22:20:15.943 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-02-05 22:20:16.424 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8761 (http)
+2025-02-05 22:20:16.438 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2025-02-05 22:20:16.443 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-05 22:20:16.443 [main] INFO  [trace=, span=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-05 22:20:16.526 [main] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-05 22:20:16.526 [main] INFO  [trace=, span=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2112 ms
+2025-02-05 22:20:16.892 [main] ERROR [trace=, span=] o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webMvcObservationFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/web/servlet/WebMvcObservationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcObservationFilter' parameter 0: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+2025-02-05 22:20:16.938 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-05 22:20:16.946 [main] WARN  [trace=, span=] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-02-05 22:20:16.970 [main] INFO  [trace=, span=] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-05 22:20:16.986 [main] ERROR [trace=, span=] o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.epam.xstack.gym.eurekaserver.EurekaServerApplication.main(EurekaServerApplication.java:12)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcObservationFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/web/servlet/WebMvcObservationAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcObservationFilter' parameter 0: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:202)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'observationRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration.class]: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 53 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tracingAwareMeterObservationHandler' defined in class path resource [org/springframework/boot/actuate/autoconfigure/observation/ObservationAutoConfiguration$MeterObservationHandlerConfiguration$TracingAndMetricsObservationHandlerConfiguration.class]: Unsatisfied dependency expressed through method 'tracingAwareMeterObservationHandler' parameter 0: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1696)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1470)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.resolveStream(DefaultListableBeanFactory.java:2198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.orderedStream(DefaultListableBeanFactory.java:2192)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.asOrderedList(ObservationRegistryConfigurer.java:101)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.lambda$registerHandlers$0(ObservationRegistryConfigurer.java:78)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2126)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.registerHandlers(ObservationRegistryConfigurer.java:77)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryConfigurer.configure(ObservationRegistryConfigurer.java:71)
+	at org.springframework.boot.actuate.autoconfigure.observation.ObservationRegistryPostProcessor.postProcessAfterInitialization(ObservationRegistryPostProcessor.java:69)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1809)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	... 63 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 88 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.micrometer.prometheusmetrics.PrometheusMeterRegistry]: Factory method 'prometheusMeterRegistry' threw exception with message: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 102 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/prometheus/metrics/expositionformats/ExpositionFormats
+	at io.micrometer.prometheusmetrics.PrometheusMeterRegistry.<init>(PrometheusMeterRegistry.java:107)
+	at org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusMetricsExportAutoConfiguration.prometheusMeterRegistry(PrometheusMetricsExportAutoConfiguration.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 103 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.prometheus.metrics.expositionformats.ExpositionFormats
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 110 common frames omitted
+2025-02-05 22:24:04.354 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Starting EurekaServerApplication using Java 17.0.14 with PID 78862 (/Users/owner/Downloads/EpamJava/eureka-server/build/classes/java/main started by owner in /Users/owner/Downloads/EpamJava)
+2025-02-05 22:24:04.358 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-05 22:24:05.603 [main] INFO  [trace=, span=] o.s.cloud.context.scope.GenericScope - BeanFactory id=da1dc1f6-9533-320f-8baa-ca3f581ae0d4
+2025-02-05 22:24:05.632 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-02-05 22:24:05.633 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-02-05 22:24:05.759 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8761 (http)
+2025-02-05 22:24:05.766 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2025-02-05 22:24:05.768 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-05 22:24:05.768 [main] INFO  [trace=, span=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-05 22:24:05.803 [main] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-05 22:24:05.804 [main] INFO  [trace=, span=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1392 ms
+2025-02-05 22:24:06.332 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2025-02-05 22:24:06.332 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2025-02-05 22:24:06.415 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2025-02-05 22:24:06.415 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2025-02-05 22:24:07.060 [main] WARN  [trace=, span=] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-05 22:24:07.069 [main] INFO  [trace=, span=] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-02-05 22:24:07.080 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-02-05 22:24:07.080 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Client configured to neither register nor query for data.
+2025-02-05 22:24:07.081 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1738776247081 with initial instances count: 0
+2025-02-05 22:24:07.101 [main] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Initializing ...
+2025-02-05 22:24:07.101 [main] INFO  [trace=, span=] c.n.eureka.cluster.PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2025-02-05 22:24:07.185 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2025-02-05 22:24:07.185 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2025-02-05 22:24:07.185 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2025-02-05 22:24:07.185 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2025-02-05 22:24:07.207 [main] INFO  [trace=, span=] c.n.eureka.cluster.PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2025-02-05 22:24:07.213 [main] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2025-02-05 22:24:07.213 [main] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Initialized
+2025-02-05 22:24:07.217 [main] INFO  [trace=, span=] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-02-05 22:24:07.252 [main] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServiceRegistry - Registering application EUREKA-SERVER with eureka with status UP
+2025-02-05 22:24:07.253 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2025-02-05 22:24:07.258 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - isAws returned false
+2025-02-05 22:24:07.258 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Initialized server context
+2025-02-05 22:24:07.259 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2025-02-05 22:24:07.259 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2025-02-05 22:24:07.259 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Changing status to UP
+2025-02-05 22:24:07.259 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerInitializerConfiguration - Started Eureka Server
+2025-02-05 22:24:07.264 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2025-02-05 22:24:07.265 [main] INFO  [trace=, span=] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8761
+2025-02-05 22:24:07.280 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Started EurekaServerApplication in 3.431 seconds (process running for 4.931)
+2025-02-05 22:24:07.791 [RMI TCP Connection(2)-192.168.86.24] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-05 22:24:07.793 [RMI TCP Connection(2)-192.168.86.24] INFO  [trace=, span=] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-05 22:24:07.799 [RMI TCP Connection(2)-192.168.86.24] INFO  [trace=, span=] o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2025-02-05 22:24:08.689 [http-nio-8761-exec-2] WARN  [trace=67a39eb8b18698fd427836765169825f, span=427836765169825f] c.n.e.r.AbstractInstanceRegistry - DS: Registry: lease doesn't exist, registering resource: MAIN-MICROSERVICE - macbookpro.lan:main-microservice:8080
+2025-02-05 22:24:08.690 [http-nio-8761-exec-2] WARN  [trace=67a39eb8b18698fd427836765169825f, span=427836765169825f] c.n.e.resources.InstanceResource - Not Found (Renew): MAIN-MICROSERVICE - macbookpro.lan:main-microservice:8080
+2025-02-05 22:24:08.750 [http-nio-8761-exec-1] INFO  [trace=67a39eb8842b455cf6359d79923ab47a, span=f6359d79923ab47a] c.n.e.r.AbstractInstanceRegistry - Registered instance MAIN-MICROSERVICE/macbookpro.lan:main-microservice:8080 with status UP (replication=false)
+2025-02-05 22:24:08.804 [http-nio-8761-exec-4] INFO  [trace=67a39eb8421a0690a6c98f65e8b83739, span=a6c98f65e8b83739] c.n.e.r.AbstractInstanceRegistry - Registered instance MAIN-MICROSERVICE/macbookpro.lan:main-microservice:8080 with status UP (replication=false)
+2025-02-05 22:24:09.391 [http-nio-8761-exec-6] INFO  [trace=67a39eb9f25ef36677d6ec7f93ce573a, span=77d6ec7f93ce573a] c.n.e.r.AbstractInstanceRegistry - Registered instance MAIN-MICROSERVICE/macbookpro.lan:main-microservice:8080 with status UP (replication=true)
+2025-02-05 22:24:23.128 [http-nio-8761-exec-7] WARN  [trace=67a39ec7f17a4689bf6e6f94446b745a, span=9dc1441c63334a5e] c.n.e.r.AbstractInstanceRegistry - DS: Registry: lease doesn't exist, registering resource: TRAINER-WORKLOAD-SERVICE - macbookpro.lan:trainer-workload-service:8081
+2025-02-05 22:24:23.131 [http-nio-8761-exec-7] WARN  [trace=67a39ec7f17a4689bf6e6f94446b745a, span=9dc1441c63334a5e] c.n.e.resources.InstanceResource - Not Found (Renew): TRAINER-WORKLOAD-SERVICE - macbookpro.lan:trainer-workload-service:8081
+2025-02-05 22:24:23.132 [http-nio-8761-exec-5] INFO  [trace=67a39ec7b1e6064ddbe53a73500713d3, span=8761cba08b258ae4] c.n.e.r.AbstractInstanceRegistry - Registered instance TRAINER-WORKLOAD-SERVICE/macbookpro.lan:trainer-workload-service:8081 with status UP (replication=false)
+2025-02-05 22:24:23.201 [http-nio-8761-exec-8] INFO  [trace=67a39ec72f99ccfc61abae68355aa2ac, span=bf90c55f9b16d863] c.n.e.r.AbstractInstanceRegistry - Registered instance TRAINER-WORKLOAD-SERVICE/macbookpro.lan:trainer-workload-service:8081 with status UP (replication=false)
+2025-02-05 22:24:23.715 [http-nio-8761-exec-9] INFO  [trace=67a39ec77f65ba0a47a23264083a728d, span=47a23264083a728d] c.n.e.r.AbstractInstanceRegistry - Registered instance TRAINER-WORKLOAD-SERVICE/macbookpro.lan:trainer-workload-service:8081 with status UP (replication=true)
+2025-02-05 22:25:07.265 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2025-02-05 22:26:07.266 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2025-02-05 22:26:20.059 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application EUREKA-SERVER with eureka with status DOWN
+2025-02-05 22:26:20.122 [http-nio-8761-exec-10] INFO  [trace=67a39f3cb777a42e0df510430b4c8a38, span=0df510430b4c8a38] c.n.e.r.AbstractInstanceRegistry - Registered instance MAIN-MICROSERVICE/macbookpro.lan:main-microservice:8080 with status DOWN (replication=false)
+2025-02-05 22:26:20.190 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Shutting down Eureka Server..
+2025-02-05 22:26:20.191 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shutting down ...
+2025-02-05 22:26:20.193 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR [trace=, span=] c.n.d.s.t.j.EurekaJersey3ClientImpl - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169)
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54)
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-02-05 22:26:20.221 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shut down
+2025-02-05 22:26:20.221 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Eureka Service is now shutdown...
+2025-02-05 22:26:20.223 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shutting down ...
+2025-02-05 22:26:20.224 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shut down
+2025-02-05 22:26:20.233 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-02-05 22:26:20.234 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-02-06 12:07:14.756 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Starting EurekaServerApplication using Java 17.0.14 with PID 45205 (/Users/owner/Downloads/EpamJava/eureka-server/build/classes/java/main started by owner in /Users/owner/Downloads/EpamJava)
+2025-02-06 12:07:14.758 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-06 12:07:15.306 [main] INFO  [trace=, span=] o.s.cloud.context.scope.GenericScope - BeanFactory id=da1dc1f6-9533-320f-8baa-ca3f581ae0d4
+2025-02-06 12:07:15.332 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-02-06 12:07:15.333 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-02-06 12:07:15.431 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8761 (http)
+2025-02-06 12:07:15.436 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2025-02-06 12:07:15.438 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-06 12:07:15.438 [main] INFO  [trace=, span=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-06 12:07:15.468 [main] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-06 12:07:15.468 [main] INFO  [trace=, span=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 686 ms
+2025-02-06 12:07:15.905 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2025-02-06 12:07:15.906 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2025-02-06 12:07:15.977 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2025-02-06 12:07:15.977 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2025-02-06 12:07:16.444 [main] WARN  [trace=, span=] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-06 12:07:16.452 [main] INFO  [trace=, span=] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-02-06 12:07:16.461 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-02-06 12:07:16.461 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Client configured to neither register nor query for data.
+2025-02-06 12:07:16.462 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1738825636461 with initial instances count: 0
+2025-02-06 12:07:16.482 [main] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Initializing ...
+2025-02-06 12:07:16.482 [main] INFO  [trace=, span=] c.n.eureka.cluster.PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2025-02-06 12:07:16.565 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2025-02-06 12:07:16.565 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2025-02-06 12:07:16.565 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2025-02-06 12:07:16.565 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2025-02-06 12:07:16.579 [main] INFO  [trace=, span=] c.n.eureka.cluster.PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2025-02-06 12:07:16.585 [main] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2025-02-06 12:07:16.585 [main] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Initialized
+2025-02-06 12:07:16.589 [main] INFO  [trace=, span=] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-02-06 12:07:16.624 [main] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServiceRegistry - Registering application EUREKA-SERVER with eureka with status UP
+2025-02-06 12:07:16.625 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2025-02-06 12:07:16.630 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - isAws returned false
+2025-02-06 12:07:16.630 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Initialized server context
+2025-02-06 12:07:16.630 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2025-02-06 12:07:16.630 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2025-02-06 12:07:16.630 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Changing status to UP
+2025-02-06 12:07:16.631 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerInitializerConfiguration - Started Eureka Server
+2025-02-06 12:07:16.635 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2025-02-06 12:07:16.635 [main] INFO  [trace=, span=] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8761
+2025-02-06 12:07:16.649 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Started EurekaServerApplication in 3.487 seconds (process running for 4.325)
+2025-02-06 12:07:17.163 [RMI TCP Connection(3)-127.0.0.1] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-06 12:07:17.163 [RMI TCP Connection(3)-127.0.0.1] INFO  [trace=, span=] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-06 12:07:17.164 [RMI TCP Connection(3)-127.0.0.1] INFO  [trace=, span=] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-06 12:08:16.636 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2025-02-06 12:09:16.640 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:10:16.639 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:11:16.641 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2025-02-06 12:12:16.643 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 12:13:16.646 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:14:16.645 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2025-02-06 12:15:16.755 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2025-02-06 12:16:16.760 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:17:16.760 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2025-02-06 12:18:16.763 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2025-02-06 12:19:16.766 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 12:20:16.772 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 12:21:16.775 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:22:16.679 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 1
+2025-02-06 12:22:16.777 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 12:23:16.781 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 3ms
+2025-02-06 12:24:16.785 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2025-02-06 12:25:16.787 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 12:47:27.093 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:48:27.087 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 12:49:27.091 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:50:27.093 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2025-02-06 12:51:27.096 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 12:52:27.101 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:53:27.107 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2025-02-06 12:54:27.102 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2025-02-06 12:55:27.108 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:56:27.108 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 9ms
+2025-02-06 12:57:27.109 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 12:58:18.904 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application EUREKA-SERVER with eureka with status DOWN
+2025-02-06 12:58:19.021 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Shutting down Eureka Server..
+2025-02-06 12:58:19.021 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shutting down ...
+2025-02-06 12:58:19.023 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shut down
+2025-02-06 12:58:19.024 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Eureka Service is now shutdown...
+2025-02-06 12:58:19.026 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shutting down ...
+2025-02-06 12:58:19.026 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shut down
+2025-02-06 12:58:19.024 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR [trace=, span=] c.n.d.s.t.j.EurekaJersey3ClientImpl - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169)
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54)
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-02-06 12:58:19.043 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-02-06 12:58:19.043 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-02-06 15:07:06.865 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Starting EurekaServerApplication using Java 17.0.14 with PID 53138 (/Users/owner/Downloads/EpamJava/eureka-server/build/classes/java/main started by owner in /Users/owner/Downloads/EpamJava)
+2025-02-06 15:07:06.866 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-06 15:07:07.343 [main] INFO  [trace=, span=] o.s.cloud.context.scope.GenericScope - BeanFactory id=da1dc1f6-9533-320f-8baa-ca3f581ae0d4
+2025-02-06 15:07:07.364 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-02-06 15:07:07.365 [main] WARN  [trace=, span=] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-02-06 15:07:07.465 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8761 (http)
+2025-02-06 15:07:07.471 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2025-02-06 15:07:07.472 [main] INFO  [trace=, span=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-06 15:07:07.473 [main] INFO  [trace=, span=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-06 15:07:07.502 [main] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-06 15:07:07.502 [main] INFO  [trace=, span=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 619 ms
+2025-02-06 15:07:07.889 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2025-02-06 15:07:07.890 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2025-02-06 15:07:07.959 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2025-02-06 15:07:07.960 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2025-02-06 15:07:08.323 [main] WARN  [trace=, span=] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-06 15:07:08.330 [main] INFO  [trace=, span=] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-02-06 15:07:08.338 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-02-06 15:07:08.338 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Client configured to neither register nor query for data.
+2025-02-06 15:07:08.339 [main] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1738836428339 with initial instances count: 0
+2025-02-06 15:07:08.357 [main] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Initializing ...
+2025-02-06 15:07:08.358 [main] INFO  [trace=, span=] c.n.eureka.cluster.PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2025-02-06 15:07:08.420 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2025-02-06 15:07:08.420 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2025-02-06 15:07:08.420 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2025-02-06 15:07:08.420 [main] INFO  [trace=, span=] c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2025-02-06 15:07:08.433 [main] INFO  [trace=, span=] c.n.eureka.cluster.PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2025-02-06 15:07:08.438 [main] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2025-02-06 15:07:08.438 [main] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Initialized
+2025-02-06 15:07:08.445 [main] INFO  [trace=, span=] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-02-06 15:07:08.475 [main] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServiceRegistry - Registering application EUREKA-SERVER with eureka with status UP
+2025-02-06 15:07:08.476 [main] INFO  [trace=, span=] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2025-02-06 15:07:08.481 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - isAws returned false
+2025-02-06 15:07:08.481 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Initialized server context
+2025-02-06 15:07:08.481 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2025-02-06 15:07:08.481 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2025-02-06 15:07:08.481 [Thread-10] INFO  [trace=, span=] c.n.e.r.PeerAwareInstanceRegistryImpl - Changing status to UP
+2025-02-06 15:07:08.482 [Thread-10] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerInitializerConfiguration - Started Eureka Server
+2025-02-06 15:07:08.485 [main] INFO  [trace=, span=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2025-02-06 15:07:08.485 [main] INFO  [trace=, span=] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8761
+2025-02-06 15:07:08.498 [main] INFO  [trace=, span=] c.e.x.g.e.EurekaServerApplication - Started EurekaServerApplication in 1.862 seconds (process running for 2.235)
+2025-02-06 15:07:08.755 [RMI TCP Connection(3)-127.0.0.1] INFO  [trace=, span=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-06 15:07:08.756 [RMI TCP Connection(3)-127.0.0.1] INFO  [trace=, span=] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-06 15:07:08.756 [RMI TCP Connection(3)-127.0.0.1] INFO  [trace=, span=] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-02-06 15:07:17.366 [http-nio-8761-exec-1] WARN  [trace=67a489d574af7d5812d0c4c9f63224a8, span=f377e6bc84515ffd] c.n.e.r.AbstractInstanceRegistry - DS: Registry: lease doesn't exist, registering resource: TRAINER-WORKLOAD-SERVICE - 192.168.149.169:trainer-workload-service:8081
+2025-02-06 15:07:17.369 [http-nio-8761-exec-1] WARN  [trace=67a489d574af7d5812d0c4c9f63224a8, span=f377e6bc84515ffd] c.n.e.resources.InstanceResource - Not Found (Renew): TRAINER-WORKLOAD-SERVICE - 192.168.149.169:trainer-workload-service:8081
+2025-02-06 15:07:17.402 [http-nio-8761-exec-2] INFO  [trace=67a489d58189873a965a92aec2c4276e, span=ed3a57a43c51d831] c.n.e.r.AbstractInstanceRegistry - Registered instance TRAINER-WORKLOAD-SERVICE/192.168.149.169:trainer-workload-service:8081 with status UP (replication=false)
+2025-02-06 15:07:17.420 [http-nio-8761-exec-3] INFO  [trace=67a489d5af97fe6c0abb42924f78aeb2, span=114751d157139d55] c.n.e.r.AbstractInstanceRegistry - Registered instance TRAINER-WORKLOAD-SERVICE/192.168.149.169:trainer-workload-service:8081 with status UP (replication=false)
+2025-02-06 15:07:18.022 [http-nio-8761-exec-4] INFO  [trace=67a489d61ded333b9d558c4f189bd8da, span=9d558c4f189bd8da] c.n.e.r.AbstractInstanceRegistry - Registered instance TRAINER-WORKLOAD-SERVICE/192.168.149.169:trainer-workload-service:8081 with status UP (replication=true)
+2025-02-06 15:08:08.487 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2025-02-06 15:09:08.493 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 15:10:08.499 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 15:11:08.501 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2025-02-06 15:12:08.505 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 15:13:08.511 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 5ms
+2025-02-06 15:14:08.511 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2025-02-06 15:15:08.512 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2025-02-06 15:16:08.514 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2025-02-06 15:17:08.518 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 4ms
+2025-02-06 15:18:00.528 [http-nio-8761-exec-9] INFO  [trace=67a48c58f44ed764f2f2bbac451b9867, span=f2f2bbac451b9867] c.n.e.r.AbstractInstanceRegistry - Registered instance MAIN-MICROSERVICE/192.168.149.169:main-microservice:8080 with status UP (replication=false)
+2025-02-06 15:18:01.049 [http-nio-8761-exec-10] INFO  [trace=67a48c597645a397a5bc25c19d280816, span=a5bc25c19d280816] c.n.e.r.AbstractInstanceRegistry - Registered instance MAIN-MICROSERVICE/192.168.149.169:main-microservice:8080 with status UP (replication=true)
+2025-02-06 15:18:08.521 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 2ms
+2025-02-06 15:19:08.527 [Eureka-EvictionTimer] INFO  [trace=, span=] c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 16ms
+2025-02-06 15:19:32.968 [http-nio-8761-exec-6] INFO  [trace=67a48cb4fc3d42c8ee069e6f2ed0718a, span=ee069e6f2ed0718a] c.n.e.r.AbstractInstanceRegistry - Registered instance MAIN-MICROSERVICE/192.168.149.169:main-microservice:8080 with status DOWN (replication=false)
+2025-02-06 15:19:32.982 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application EUREKA-SERVER with eureka with status DOWN
+2025-02-06 15:19:33.007 [http-nio-8761-exec-7] INFO  [trace=67a48cb4b8a0058f54b4874d747cf61b, span=faa00bec974b762e] c.n.e.r.AbstractInstanceRegistry - Registered instance TRAINER-WORKLOAD-SERVICE/192.168.149.169:trainer-workload-service:8081 with status DOWN (replication=false)
+2025-02-06 15:19:33.046 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Shutting down Eureka Server..
+2025-02-06 15:19:33.047 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shutting down ...
+2025-02-06 15:19:33.047 [Eureka-Jersey3Client-Conn-Cleaner2] ERROR [trace=, span=] c.n.d.s.t.j.EurekaJersey3ClientImpl - Cannot clean connections
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169)
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363)
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54)
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-02-06 15:19:33.064 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shut down
+2025-02-06 15:19:33.065 [SpringApplicationShutdownHook] INFO  [trace=, span=] o.s.c.n.e.s.EurekaServerBootstrap - Eureka Service is now shutdown...
+2025-02-06 15:19:33.066 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shutting down ...
+2025-02-06 15:19:33.067 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.n.e.DefaultEurekaServerContext - Shut down
+2025-02-06 15:19:33.081 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-02-06 15:19:33.081 [SpringApplicationShutdownHook] INFO  [trace=, span=] c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

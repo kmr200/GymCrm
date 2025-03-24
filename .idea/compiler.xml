@@ -8,8 +8,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.0/d48e787cbd31bfd8766cdcd255ca102e974309/mapstruct-processor-1.6.0.jar" />
         </processorPath>
-        <module name="GymCrm.test" />
-        <module name="GymCrm.main" />
+        <module name="TrainerWorkloadService.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
